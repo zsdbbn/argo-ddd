@@ -29,19 +29,19 @@ generate_config() {
                         "dest":3001
                     },
                     {
-                        "path":"/${WSPATH}-less",
+                        "path":"/${WSPATH}-lll",
                         "dest":3002
                     },
                     {
-                        "path":"/${WSPATH}-mess",
+                        "path":"/${WSPATH}-mmm",
                         "dest":3003
                     },
                     {
-                        "path":"/${WSPATH}-rojan",
+                        "path":"/${WSPATH}-ttt",
                         "dest":3004
                     },
                     {
-                        "path":"/${WSPATH}-hadowsocks",
+                        "path":"/${WSPATH}-sss",
                         "dest":3005
                     }
                 ]
@@ -84,7 +84,7 @@ generate_config() {
                 "network":"ws",
                 "security":"none",
                 "wsSettings":{
-                    "path":"/${WSPATH}-less"
+                    "path":"/${WSPATH}-lll"
                 }
             },
             "sniffing":{
@@ -111,7 +111,7 @@ generate_config() {
             "streamSettings":{
                 "network":"ws",
                 "wsSettings":{
-                    "path":"/${WSPATH}-mess"
+                    "path":"/${WSPATH}-mmm"
                 }
             },
             "sniffing":{
@@ -138,7 +138,7 @@ generate_config() {
                 "network":"ws",
                 "security":"none",
                 "wsSettings":{
-                    "path":"/${WSPATH}-rojan"
+                    "path":"/${WSPATH}-ttt"
                 }
             },
             "sniffing":{
@@ -166,7 +166,7 @@ generate_config() {
             "streamSettings":{
                 "network":"ws",
                 "wsSettings":{
-                    "path":"/${WSPATH}-hadowsocks"
+                    "path":"/${WSPATH}-sss"
                 }
             },
             "sniffing":{
@@ -181,7 +181,7 @@ generate_config() {
     ],
     "dns":{
         "servers":[
-            "8.8.8.8"
+            "https+local://8.8.8.8/dns-query"
         ]
     },
     "outbounds":[
