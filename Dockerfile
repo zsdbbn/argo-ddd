@@ -1,5 +1,4 @@
-Example :
-USER 10014
+
 FROM node:latest
 EXPOSE 4000
 WORKDIR /app
