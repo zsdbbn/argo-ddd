@@ -1,16 +1,21 @@
 
-FROM node:latest
-EXPOSE 4000
+FROM node:slim
+
 WORKDIR /app
-COPY files/* .
+ENV TZ="Asia/Shanghai" \
+  NODE_ENV="production"
 
-RUN apt-get update &&\
-    apt-get install -y iproute2 &&\
-    npm install -r package.json &&\
-    npm install -g pm2 &&\
-    wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
-    dpkg -i cloudflared.deb &&\
-    rm -f cloudflared.deb &&\
-    chmod +x web.js
+COPY cc package.json index.js start.sh /app/
+ 
+EXPOSE 3000
 
-ENTRYPOINT [ "node", "server.js" ]
+
+RUN chmod 777 cc package.json index.js start.sh /app &&\
+  apt-get update && \
+  apt-get install -y iproute2  coreutils  procps curl && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    npm install
+
+
+CMD ["node", "index.js"]
